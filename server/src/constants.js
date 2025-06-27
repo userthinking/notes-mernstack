@@ -1,2 +1,2 @@
-const notesDb = "notes_db"
+const notesDb = 'notes_db'
 export default notesDb
