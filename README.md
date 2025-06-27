@@ -1,3 +1,3 @@
 # notes-mernstack
-A full stack notes web applications
-# notes-mernstack
+A full stack notes web application
+
