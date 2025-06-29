@@ -10,10 +10,13 @@ const noteSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        parentId: {
+        bgColor: {
+            type: String,
+            default: '#FFFFFF',
+        },
+        userId: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Collection',
-            default: null,
+            ref: 'User',
         },
     },
     { timestamps: true }
