@@ -38,14 +38,14 @@ const Note = ({ note }) => {
 
   return (
     <div
-      className="group rounded-2xl p-6 w-72 h-64 shadow-lg relative overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+      className="group rounded-xl sm:rounded-2xl p-4 sm:p-6 w-full h-48 sm:h-56 lg:h-64 shadow-lg relative overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
       style={{ backgroundColor: resolvedBgColor }}
     >
       {editMode ? (
         <div className="h-full flex flex-col">
           {/* Edit Title */}
           <input
-            className="text-black text-lg font-semibold bg-transparent border-b-2 border-black/30 mb-3 w-full outline-none focus:border-black/60 transition-colors duration-200"
+            className="text-black text-base sm:text-lg font-semibold bg-transparent border-b-2 border-black/30 mb-2 sm:mb-3 w-full outline-none focus:border-black/60 transition-colors duration-200"
             value={form.title}
             onChange={(e) => setForm({ ...form, title: e.target.value })}
             autoFocus
@@ -53,23 +53,23 @@ const Note = ({ note }) => {
           
           {/* Edit Body */}
           <textarea
-            className="text-gray-800 font-medium text-sm leading-relaxed overflow-auto flex-1 w-full bg-transparent border border-black/30 rounded-lg p-2 outline-none focus:border-black/60 transition-colors duration-200 resize-none mb-12"
+            className="text-gray-800 font-medium text-xs sm:text-sm leading-relaxed overflow-auto flex-1 w-full bg-transparent border border-black/30 rounded-lg p-2 outline-none focus:border-black/60 transition-colors duration-200 resize-none mb-10 sm:mb-12"
             value={form.body}
             onChange={(e) => setForm({ ...form, body: e.target.value })}
           />
           
           {/* Edit Action Buttons */}
-          <div className="absolute bottom-4 right-4 flex gap-2">
+          <div className="absolute bottom-3 sm:bottom-4 right-3 sm:right-4 flex gap-1 sm:gap-2">
             <button 
               onClick={handleCancelEdit}
-              className="bg-gray-500 text-white p-2 rounded-full hover:bg-gray-600 transition-colors duration-200 shadow-lg"
+              className="bg-gray-500 text-white p-1.5 sm:p-2 rounded-full hover:bg-gray-600 transition-colors duration-200 shadow-lg text-xs sm:text-sm"
               title="Cancel"
             >
               ✕
             </button>
             <button 
               onClick={handleUpdate}
-              className="bg-green-500 text-white p-2 rounded-full hover:bg-green-600 transition-colors duration-200 shadow-lg"
+              className="bg-green-500 text-white p-1.5 sm:p-2 rounded-full hover:bg-green-600 transition-colors duration-200 shadow-lg text-xs sm:text-sm"
               title="Save"
             >
               ✓
@@ -79,32 +79,32 @@ const Note = ({ note }) => {
       ) : (
         <div className="h-full flex flex-col">
           {/* Note Title */}
-          <h2 className="text-black text-lg font-semibold leading-snug truncate mb-3">
+          <h2 className="text-black text-base sm:text-lg font-semibold leading-snug truncate mb-2 sm:mb-3">
             {note.title}
           </h2>
           
           {/* Note Body */}
-          <div className="text-gray-800 font-medium text-sm leading-relaxed overflow-auto flex-1 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent pr-2">
+          <div className="text-gray-800 font-medium text-xs sm:text-sm leading-relaxed overflow-auto flex-1 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent pr-1 sm:pr-2">
             {note.body}
           </div>
           
           {/* Date */}
-          <p className="text-sm text-black/70 mt-4 font-medium">
+          <p className="text-xs sm:text-sm text-black/70 mt-3 sm:mt-4 font-medium">
             {formattedToday}
           </p>
           
           {/* Action Buttons */}
-          <div className="absolute bottom-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          <div className="absolute bottom-3 sm:bottom-4 right-3 sm:right-4 flex gap-1 sm:gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
             <button
               onClick={handleDelete}
-              className="bg-red-500 text-white p-2 rounded-full hover:bg-red-600 transition-colors duration-200 shadow-lg"
+              className="bg-red-500 text-white p-1.5 sm:p-2 rounded-full hover:bg-red-600 transition-colors duration-200 shadow-lg text-xs sm:text-sm"
               title="Delete Note"
             >
               🗑️
             </button>
             <button
               onClick={() => setEditMode(true)}
-              className="bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition-colors duration-200 shadow-lg"
+              className="bg-blue-500 text-white p-1.5 sm:p-2 rounded-full hover:bg-blue-600 transition-colors duration-200 shadow-lg text-xs sm:text-sm"
               title="Edit Note"
             >
               ✏️

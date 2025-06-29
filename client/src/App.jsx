@@ -45,6 +45,8 @@ const App = () => {
             draggable
             pauseOnHover
             theme="light"
+            toastClassName="text-sm sm:text-base"
+            className="!z-[9999]"
           />
         </NotesProvider>
       </AuthProvider>

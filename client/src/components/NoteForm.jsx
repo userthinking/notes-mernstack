@@ -37,7 +37,7 @@ const NoteForm = () => {
   };
 
   return (
-    <div className="rounded-2xl p-6 w-72 h-64 shadow-lg relative overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-dashed border-blue-200 hover:border-blue-300 transition-all duration-200">
+    <div className="rounded-xl sm:rounded-2xl p-4 sm:p-6 w-full h-48 sm:h-56 lg:h-64 shadow-lg relative overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-dashed border-blue-200 hover:border-blue-300 transition-all duration-200">
       <div className="h-full flex flex-col">
         {/* Title Input */}
         <input
@@ -46,7 +46,7 @@ const NoteForm = () => {
           value={form.title}
           onChange={handleChange}
           placeholder="Note title..."
-          className="text-black text-lg font-semibold bg-transparent border-none outline-none placeholder-gray-500 mb-3 w-full"
+          className="text-black text-base sm:text-lg font-semibold bg-transparent border-none outline-none placeholder-gray-500 mb-2 sm:mb-3 w-full"
           autoFocus
         />
         
@@ -56,14 +56,14 @@ const NoteForm = () => {
           value={form.body}
           onChange={handleChange}
           placeholder="Write your note here..."
-          className="text-gray-700 font-medium text-sm leading-relaxed bg-transparent border-none outline-none placeholder-gray-400 resize-none flex-1 w-full"
+          className="text-gray-700 font-medium text-xs sm:text-sm leading-relaxed bg-transparent border-none outline-none placeholder-gray-400 resize-none flex-1 w-full"
         ></textarea>
         
         {/* Action Buttons */}
-        <div className="absolute bottom-4 right-4 flex gap-2">
+        <div className="absolute bottom-3 sm:bottom-4 right-3 sm:right-4 flex gap-1 sm:gap-2">
           <button
             onClick={handleCancel}
-            className="bg-gray-500 text-white p-2 rounded-full hover:bg-gray-600 transition-colors duration-200"
+            className="bg-gray-500 text-white p-1.5 sm:p-2 rounded-full hover:bg-gray-600 transition-colors duration-200 text-xs sm:text-sm"
             title="Cancel"
           >
             ✕
@@ -71,7 +71,7 @@ const NoteForm = () => {
           <button
             onClick={handleAdd}
             disabled={!form.title.trim() || !form.body.trim()}
-            className="bg-green-500 text-white p-2 rounded-full hover:bg-green-600 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors duration-200"
+            className="bg-green-500 text-white p-1.5 sm:p-2 rounded-full hover:bg-green-600 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors duration-200 text-xs sm:text-sm"
             title="Add Note"
           >
             ✓
@@ -79,7 +79,7 @@ const NoteForm = () => {
         </div>
         
         {/* Character Count */}
-        <div className="absolute bottom-4 left-6">
+        <div className="absolute bottom-3 sm:bottom-4 left-4 sm:left-6">
           <p className="text-xs text-gray-500">
             {form.body.length}/500
           </p>
