@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create axios instance with base configuration
 const authAPI = axios.create({
-  baseURL: "https://notes-mernstack-backend.onrender.com/api/users",
+  baseURL: import.meta.env.VITE_API_URL || "https://notes-mernstack-backend.onrender.com/api/users",
   headers: {
     "Content-Type": "application/json",
   },
